@@ -29,7 +29,7 @@ var clearFields = function() {
      document.getElementById( 'idNumber' ).value = "",
      document.getElementById( 'jobTitle' ).value = "",
      document.getElementById( 'annualSalary' ).value = ""
-};//end clearFields
+};  //end clearFields
 
 //calculate monthlySalaryTotal
 var monthlySalaryTotal = function(){
@@ -38,4 +38,21 @@ var monthlySalaryTotal = function(){
   globalSalary += Number(employee[i][4]);
 }
   return globalSalary/12;
+};  //end calculate monthlySalaryTotal
+
+var deleteEmployee = function(){
+  var idNumber = document.getElementById('idNumberDelete').value;
+  console.log(idNumber);
+  for (i=0; i<employee.length; i++){
+    console.log(employee[i][2]);
+  if(employee[i][2]===idNumber){
+  employee.splice(i,1);
+  console.log(employee);
+}
+}
+  document.getElementById( 'listOfEmployees' ).innerHTML=("<tr><th>First Name</th><th>Last Name</th><th>ID Number</th><th>Job Title</th><th>Annual Salary</th></tr>");
+  for(i=0; i<employee.length; i++){
+    document.getElementById('listOfEmployees').innerHTML+=("<tr><td>"+ employee[i][0] +"</td><td>" + employee[i][1] + "</td><td>"+ employee[i][2] + "</td><td>" + employee[i][3] + "</td><td>" +
+    employee[i][4] +"</tr></td>");
+  }
 };
