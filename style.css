@@ -2,5 +2,10 @@ body {
 background-color: antiquewhite;
 }
 h1{
-  color: : #8b6742;
+  text-align: center;
+  font-size: 75px;
+  color: #8b6742;
 }
+h2{
+  padding-top: 75px;
+};
